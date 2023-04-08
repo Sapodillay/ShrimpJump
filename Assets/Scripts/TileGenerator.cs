@@ -31,27 +31,33 @@ public class TileGenerator : MonoBehaviour
 
     private void GenerateNewTile()
     {
+        GameObject tile;
+
+        if (tiles.Count > tileCount)
+        {
+            Debug.Log("Moving tile");
+            GameObject tileToDelete = tiles.Dequeue();
+            //Add object pooling later.
+            tile = tileToDelete;
+        }
+        else
+        {
+            tile = Instantiate(tilePrefab);
+        }
+
+
 
         //Get random position between min_x and max_x.
         float tile_x = Random.Range(min_x_bound, max_x_bound);
-
         float tile_y = currentHeight;
 
         //extend current height, make this random in future.
         currentHeight += 1;
 
-        GameObject tile = Instantiate(tilePrefab);
+        
         tile.transform.position = new Vector2(tile_x, tile_y);
         tiles.Enqueue(tile);
 
-        if (tiles.Count > tileCount)
-        {
-            GameObject tileToDelete = tiles.Dequeue();
-            //Add object pooling later.
-            Destroy(tileToDelete);
-
-
-        }
     }
 
 
