@@ -16,13 +16,35 @@ public class TileGenerator : MonoBehaviour
     [SerializeField] Player player;
 
 
+
+
+
     private void Awake()
     {
-        for(int i=0; i < 100; i++)
-        { 
+        GenerateStartingTiles(5);
+    }
+
+    private void FixedUpdate()
+    {
+        float highestY = player.GetHighestY();
+       if (highestY + 5 > currentHeight)
+        {
             GenerateNewTile();
         }
     }
+
+
+
+
+    private void GenerateStartingTiles(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            GenerateNewTile();
+        }
+    }
+
+
 
 
     private void GenerateNewTile()
