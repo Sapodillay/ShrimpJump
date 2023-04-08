@@ -19,10 +19,6 @@ public class TileGenerator : MonoBehaviour
 
 
 
-    private void Awake()
-    {
-        //GenerateStartingTiles(2);
-    }
 
     private void FixedUpdate()
     {
@@ -32,20 +28,6 @@ public class TileGenerator : MonoBehaviour
             GenerateNewTile();
         }
     }
-
-
-
-
-    private void GenerateStartingTiles(int amount)
-    {
-        for (int i = 0; i < amount; i++)
-        {
-            GenerateNewTile();
-        }
-    }
-
-
-
 
     private void GenerateNewTile()
     {
@@ -70,8 +52,6 @@ public class TileGenerator : MonoBehaviour
 
 
         }
-
-
     }
 
 
