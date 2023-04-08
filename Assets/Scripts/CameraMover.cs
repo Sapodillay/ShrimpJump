@@ -6,14 +6,10 @@ using UnityEngine.UIElements;
 public class CameraMover : MonoBehaviour
 {
 
-    [SerializeField] GameObject player;
+    [SerializeField] Player player;
 
-    float highest_y = 0f;
-
-    // Update is called once per frame
     void Update()
     {
-        Camera.main.transform.position = new Vector3(0,  highest_y, -10);
-        highest_y = Mathf.Max(highest_y, player.transform.position.y);
+        Camera.main.transform.position = new Vector3(0,  player.GetHighestY(), -10);
     }
 }

@@ -33,9 +33,11 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Debug.Log("Collision detected AAAAAAAAAAAAAA");
-        velocityY = JumpBoost;
-
+        //Check if the players velocity is down, only give boost if its going down.
+        if (velocityY < 0)
+        {
+            velocityY = JumpBoost;
+        }
     }
 
 

@@ -13,6 +13,8 @@ public class TileGenerator : MonoBehaviour
 
     [SerializeField] GameObject tilePrefab;
 
+    [SerializeField] Player player;
+
 
     private void Awake()
     {
