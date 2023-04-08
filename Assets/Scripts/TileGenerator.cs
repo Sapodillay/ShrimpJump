@@ -1,6 +1,4 @@
-using System.Collections;
 using System.Collections.Generic;
-using Unity.PlasticSCM.Editor.WebApi;
 using UnityEngine;
 
 public class TileGenerator : MonoBehaviour
@@ -16,12 +14,14 @@ public class TileGenerator : MonoBehaviour
     [SerializeField] Player player;
 
 
+    Queue<GameObject> tiles = new Queue<GameObject>();
+    int tileCount = 15;
 
 
 
     private void Awake()
     {
-        GenerateStartingTiles(5);
+        //GenerateStartingTiles(2);
     }
 
     private void FixedUpdate()
@@ -60,6 +60,18 @@ public class TileGenerator : MonoBehaviour
 
         GameObject tile = Instantiate(tilePrefab);
         tile.transform.position = new Vector2(tile_x, tile_y);
+        tiles.Enqueue(tile);
+
+        if (tiles.Count > tileCount)
+        {
+            GameObject tileToDelete = tiles.Dequeue();
+            //Add object pooling later.
+            Destroy(tileToDelete);
+
+
+        }
+
+
     }
 
 
