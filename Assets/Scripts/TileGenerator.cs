@@ -9,12 +9,16 @@ public class TileGenerator : MonoBehaviour
 
     float currentHeight = 0.0f;
 
-    [SerializeField] GameObject tilePrefab;
+
+    //Implement a tile manager
+    [SerializeField] Tile tilePrefab;
+    [SerializeField] BrokenTile brokenTilePrefab;
+
 
     [SerializeField] Player player;
 
 
-    Queue<GameObject> tiles = new Queue<GameObject>();
+    Queue<Tile> tiles = new Queue<Tile>();
     int tileCount = 15;
 
 
@@ -31,18 +35,18 @@ public class TileGenerator : MonoBehaviour
 
     private void GenerateNewTile()
     {
-        GameObject tile;
+        Tile tile;
 
         if (tiles.Count > tileCount)
         {
             Debug.Log("Moving tile");
-            GameObject tileToDelete = tiles.Dequeue();
+            Tile tileToDelete = tiles.Dequeue();
             //Add object pooling later.
             tile = tileToDelete;
         }
         else
         {
-            tile = Instantiate(tilePrefab);
+            tile = GetNewTile();
         }
 
 
@@ -60,6 +64,16 @@ public class TileGenerator : MonoBehaviour
 
     }
 
+
+
+    private Tile GetNewTile()
+    {
+
+
+
+
+        return null;
+    }
 
 
 
