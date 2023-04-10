@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 7954513025557202018}
   - component: {fileID: 4346721428626192254}
   - component: {fileID: 5966956359968360326}
-  - component: {fileID: 2762029977155657679}
+  - component: {fileID: 348327811907620693}
   m_Layer: 0
-  m_Name: Tile
+  m_Name: MovingTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &2762029977155657679
+--- !u!114 &348327811907620693
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -143,6 +143,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 981323027642771306}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e92a84b30606516449c2a4dabd659305, type: 3}
+  m_Script: {fileID: 11500000, guid: f1c43c9c2aeb2e049b373ccc7af57005, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 

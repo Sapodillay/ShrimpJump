@@ -17,34 +17,29 @@ public class PlayerMovement : MonoBehaviour
     float velocityY;
 
 
-    private void Awake()
-    {
-
-    }
-
     private void FixedUpdate()
     {
         HandleMovement();
-
-
     }
 
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        Tile tile;
+
+
+
         //Check if the players velocity is down, only give boost if its going down.
         if (velocityY < 0)
         {
             velocityY = JumpBoost;
+            if (collision.gameObject.TryGetComponent<Tile>(out tile))
+            {
+                tile.OnJump();
+            }
         }
     }
-
-
-
-
-
-
 
     private void HandleMovement()
     {

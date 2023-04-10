@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.UI;
 
@@ -33,9 +34,7 @@ public class Player : MonoBehaviour
 
         }
 
-
     }
-
 
     public float GetHighestY()
     {
@@ -49,5 +48,8 @@ public class Player : MonoBehaviour
         return (int)(highestY * scoreMultiplier);
     }
 
-
+    public int getDifficulty()
+    {
+        return (int)(highestY / 10);
+    }
 }
