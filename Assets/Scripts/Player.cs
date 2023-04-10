@@ -34,7 +34,6 @@ public class Player : MonoBehaviour
 
         }
 
-
     }
 
     public float GetHighestY()
@@ -49,5 +48,8 @@ public class Player : MonoBehaviour
         return (int)(highestY * scoreMultiplier);
     }
 
-
+    public int getDifficulty()
+    {
+        return (int)(highestY / 10);
+    }
 }

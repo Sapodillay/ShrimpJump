@@ -1077,7 +1077,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0086c7caaebdd04a87e479eeec0002c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  tilePrefab: {fileID: 981323027642771306, guid: 5de3da40e9aab3d4fa09ca9a18b88079, type: 3}
+  tilePrefab: {fileID: 2762029977155657679, guid: 5de3da40e9aab3d4fa09ca9a18b88079, type: 3}
+  brokenTilePrefab: {fileID: 3803529630342495069, guid: 501e2a87c89974b439545ae5af216bb0, type: 3}
   player: {fileID: 2094789521}
 --- !u!4 &1447365963
 Transform:
