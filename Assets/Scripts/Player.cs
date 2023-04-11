@@ -13,25 +13,21 @@ public class Player : MonoBehaviour
     //amount below highest Y that the player dies when hitting.
     [SerializeField] float deathY = 3f;
 
-    private void OnDrawGizmos()
-    {
-        //Debug draw to see death level
-        //Gizmos.DrawWireSphere(new Vector2(transform.position.x, highestY - deathY), 0.5f);
-    }
-
-
+    [SerializeField] FloatSO score;
 
 
     private void Update()
     {
         highestY = Mathf.Max(highestY, transform.position.y);
+
         
         if (transform.position.y < highestY - deathY)
         {
             //Kill player.
             Debug.Log("player died");
-            UIHandler.instance.OnDeath();
-
+            
+            GameManager.instance.m_onPlayerDeath.Invoke();
+            score._float = getScore();
         }
 
     }

@@ -17,6 +17,8 @@ public class UIHandler : MonoBehaviour
     private void Awake()
     {
         instance = this;
+        GameManager.instance.m_onPlayerDeath.AddListener(OnDeath);
+
     }
 
 
