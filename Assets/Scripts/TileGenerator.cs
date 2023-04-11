@@ -14,7 +14,7 @@ public class TileGenerator : MonoBehaviour
 
 
     //Implement a tile manager
-    [SerializeField] Tile tilePrefab;
+    [SerializeField] BasicTile tilePrefab;
     [SerializeField] BrokenTile brokenTilePrefab;
     [SerializeField] MovingTile movingTilePrefab;
 
@@ -22,7 +22,7 @@ public class TileGenerator : MonoBehaviour
     [SerializeField] Player player;
 
 
-    Queue<Tile> tiles = new Queue<Tile>();
+    Queue<BasicTile> tiles = new Queue<BasicTile>();
     Queue<BrokenTile> brokenTiles = new Queue<BrokenTile>();
     Queue<MovingTile> movingTiles = new Queue<MovingTile>();
 
@@ -73,7 +73,7 @@ public class TileGenerator : MonoBehaviour
         {
             types.Add(TileTypes.Broken);
         }
-        if (player.getDifficulty() >= 1)
+        if (player.getDifficulty() >= 3)
         {
             Debug.Log("Adding moving...");
             types.Add(TileTypes.MovingTile);
@@ -97,19 +97,19 @@ public class TileGenerator : MonoBehaviour
         TileTypes type = validTypes[Random.Range(0, validTypes.Count)];
         Debug.Log(validTypes.Count);
 
-        Tile tile;
         switch (type)
         {
             case TileTypes.None:
+                BasicTile basicTile;
                 if (tiles.Count > tileCount)
                 {
-                    tile = tiles.Dequeue();
-                    tiles.Enqueue(tile);
-                    return tile;
+                    basicTile = tiles.Dequeue();
+                    tiles.Enqueue(basicTile);
+                    return basicTile;
                 }
-                tile = Instantiate(tilePrefab);
-                tiles.Enqueue((tile));
-                return tile;
+                basicTile = Instantiate(tilePrefab);
+                tiles.Enqueue((basicTile));
+                return basicTile;
             case TileTypes.Broken:
                 BrokenTile brokenTile;
                 if (brokenTiles.Count > tileCount)
