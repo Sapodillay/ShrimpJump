@@ -18,17 +18,16 @@ public class MenuHandler : MonoBehaviour
         //Update high score text
         m_HighScoreText.text = "High score: " + highScoreFloat._float;
 
+        //When play retries, reload scene.
 
     }
 
 
-    public void PlayGame()
-    {
-        
 
+    public void PlayGame()
+    { 
         Debug.Log("Starting game...");
         SceneManager.LoadScene(mainLevel);
-
     }
 
 

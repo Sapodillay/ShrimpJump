@@ -19,6 +19,7 @@ public class Player : MonoBehaviour
     private void Update()
     {
         highestY = Mathf.Max(highestY, transform.position.y);
+        score._float = getScore();
 
         
         if (transform.position.y < highestY - deathY)
@@ -27,7 +28,6 @@ public class Player : MonoBehaviour
             Debug.Log("player died");
             
             GameManager.instance.m_onPlayerDeath.Invoke();
-            score._float = getScore();
         }
 
     }

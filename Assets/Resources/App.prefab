@@ -44,6 +44,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcbb758822780b24c8729d9feb1c1d31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_onGameStarted:
+    m_PersistentCalls:
+      m_Calls: []
+  m_onPlayerDeath:
+    m_PersistentCalls:
+      m_Calls: []
+  m_score: {fileID: 11400000, guid: 726eac8012292d843b040a3e868034ce, type: 2}
+  m_highScore: {fileID: 11400000, guid: c542bce4a5e34604d93f020923cc4b99, type: 2}
 --- !u!1 &7270697446447940978
 GameObject:
   m_ObjectHideFlags: 0
